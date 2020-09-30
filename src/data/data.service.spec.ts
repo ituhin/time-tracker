@@ -39,13 +39,13 @@ describe('DataService', () => {
   });
 
   it('searchTitle() - search title string', () => {
-    service.insertTimer('someuser', {id: 0, title: 'hello how are you'});
-    service.insertTimer('someuser', {id: 1, title: 'how are you doing'});
-    service.insertTimer('someuser', {id: 2, title: 'blah blah'});
+    service.insertTimer('someuser', {id:0, start_time: 1, title: 'hello how are you'});
+    service.insertTimer('someuser', {id:1, start_time: 2, title: 'how are you doing'});
+    service.insertTimer('someuser', {id:2, start_time: 3, title: 'blah blah'});
 
     expect(service.searchTitle('someuser', 'how')).toEqual([
-      {id: 1, title: 'how are you doing'},
-      {id: 0, title: 'hello how are you'}
+      {id: 1, start_time: 2, title: 'how are you doing'},
+      {id: 0, start_time: 1, title: 'hello how are you'}
     ]);
   });
 });
