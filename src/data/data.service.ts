@@ -26,6 +26,10 @@ export class DataService {
     if(!dataUsersTimer[userName] || !dataUsersTimer[userName][timerId]) {
       throw new Error(`object not found - user_name: ${userName}, timerId: ${timerId}`);
     }
+    
+    if(data.id){
+      delete data.id; // updating id not allowed in this memory storage
+    }
 
     return Object.assign(dataUsersTimer[userName][timerId], data);
   }
