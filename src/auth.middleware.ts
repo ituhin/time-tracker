@@ -17,6 +17,10 @@ export class AuthMiddleware implements NestMiddleware {
 
   decodeJwt(jwtToken: string): string {
     // token to uid decode, in this case user_name
+    if(!jwtToken) {
+      throw new Error('user token not found');
+    }
+
     const token = jwtToken.split('-');
     if(token[0] !== 'jwt' || !token[1]) {
       throw new Error('jwt auth failed');
