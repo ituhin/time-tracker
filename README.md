@@ -1,4 +1,4 @@
-time tracker 
+time tracker - test project
 
 ## Installation
 
@@ -34,7 +34,7 @@ $ npm run test:cov
 
 ## Note
 
-did not used any db and data is stored in memory, its just a test project, so restart will wipe out the data.
+did not use any db and data is stored in memory, its just a test project, so restart will wipe out the data.
 
 these endpoints are available
 
